@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .tabs {
+      display: flex;
+      background-color: #eee;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .tab {
+      padding: 15px 20px;
+      cursor: pointer;
+      border-right: 1px solid #ccc;
+    }
+
+    .tab.active {
+      background-color: #fff;
+      font-weight: bold;
+    }
+
+    #iframe {
+      border: none;
+      width: 100%;
+      height: calc(100% - 50px);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab active" data-src="https://busta1511.github.io/LPBI_2025/PTI_chienluoc.html">PTI</div>
+    <div class="tab" data-src="https://busta1511.github.io/LPBI_2025/LPI_chienluoc.html">LPI</div>
+    <div class="tab" data-src="https://busta1511.github.io/LPBI_2025/BHV_chienluoc.html">BHV</div>
+  </div>
+
+  <iframe id="iframe" src="https://busta1511.github.io/LPBI_2025/PTI_chienluoc.html"></iframe>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const iframe = document.getElementById('iframe');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        iframe.src = tab.getAttribute('data-src');
+      });
+    });
+  </script>
+
+</body>
+</html>
