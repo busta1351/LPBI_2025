@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Visualization & Content Choices: 
+        - Market Share (Pie Chart, Chart.js): Goal: Compare. To show LPBI's small current position versus giants, justifying the need for a new strategy.
+        - Revenue vs. Profit Growth (Scatter Plot, Chart.js): Goal: Relationships. To illustrate the industry-wide challenge and the need for a dual focus on growth and profitability, not just one.
+        - Profit Sources (Grouped Bar Chart, Chart.js): Goal: Compare. To highlight the critical role of financial investments in the industry's profitability, framing LPBI's own investment strategy.
+        - Strategic Model (HTML/CSS Diagram): Goal: Organize. To present LPBI's core strategy in a clear, hierarchical structure (pillars on a foundation).
+        - Investment Portfolio (Donut Charts, Chart.js): Goal: Compare/Change. To vividly show the massive gap between the current (99% deposits) and a proposed diversified portfolio, highlighting a key action area.
+        - Process/Organizational Flows (HTML/CSS Diagrams): Goal: Organize. To break down the complex roles of the new proposed divisions (Retail, Telesales, Network) into understandable components and workflows, making the "unorthodox" recommendations tangible.
+        - 5-Year Ecosystem (HTML/CSS Diagram): Goal: Relationships/Organize. To visualize the ultimate strategic goal of an integrated platform, showing how different services connect to create a holistic customer experience.
+    -->
+    <title>Infographic: Chiến Lược Tái Định Vị & Tăng Trưởng LPBank Insurance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f8f9fa;
+            color: #012A4A;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 400px;
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .hero-bg {
+            background-color: #012A4A;
+            background-image: linear-gradient(135deg, #013A63 0%, #012A4A 100%);
+        }
+        .section-title {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 800;
+            color: #012A4A;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            color: #4A5568;
+            max-width: 48rem;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+        .accent-gold {
+            color: #D4AF37;
+        }
+        .bg-accent-gold {
+            background-color: #D4AF37;
+        }
+        .border-accent-gold {
+            border-color: #D4AF37;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#012A4A]">
+                LPB<span class="accent-gold">I</span> STRATEGY
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#battlefield" class="hover:accent-gold transition-colors">Thị Trường</a>
+                <a href="#blueprint" class="hover:accent-gold transition-colors">Chiến Lược</a>
+                <a href="#engine" class="hover:accent-gold transition-colors">Cỗ Máy Tăng Trưởng</a>
+                <a href="#ecosystem" class="hover:accent-gold transition-colors">Tầm Nhìn 2030</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Lộ Trình Tái Định Vị</h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-300">Từ một doanh nghiệp bảo hiểm tiềm năng, trở thành người dẫn đầu thị trường bán lẻ thông qua chiến lược đột phá và hệ sinh thái tài chính vượt trội.</p>
+            </div>
+        </section>
+
+        <section id="battlefield" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Chiến Trường Tái Cấu Trúc</h2>
+                <p class="section-subtitle">Thị trường bảo hiểm phi nhân thọ đang trong giai đoạn thách thức, nơi tăng trưởng doanh thu không đồng nghĩa với lợi nhuận. Điều này đòi hỏi một tư duy chiến lược khác biệt, tập trung vào hiệu quả và các nguồn sinh lời bền vững.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    <div class="stat-card p-6">
+                        <h3 class="font-bold text-xl mb-4 text-center">Doanh Thu vs. Lợi Nhuận (Q3/2024)</h3>
+                        <div class="chart-container">
+                            <canvas id="revenueProfitScatter"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4 text-center">Biểu đồ cho thấy mối tương quan nghịch rõ rệt: nhiều công ty tăng trưởng doanh thu cao lại sụt giảm lợi nhuận. Riêng PTI là ngoại lệ, cho thấy sự ưu tiên tái cấu trúc để tối ưu lợi nhuận. Đây là bài học quan trọng cho LPBI.</p>
+                    </div>
+                    <div class="stat-card p-6">
+                        <h3 class="font-bold text-xl mb-4 text-center">Đâu Là "Mỏ Vàng" Lợi Nhuận? (Q3/2024)</h3>
+                        <div class="chart-container">
+                            <canvas id="profitSourceChart"></canvas>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-4 text-center">Hoạt động đầu tư tài chính đang trở thành động lực lợi nhuận chính cho nhiều doanh nghiệp, bù đắp cho biên lợi nhuận mỏng từ kinh doanh bảo hiểm cốt lõi. LPBI, với danh mục 99% tiền gửi, đang bỏ lỡ "mỏ vàng" này.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blueprint" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Bản Thiết Kế Tương Lai</h2>
+                <p class="section-subtitle">LPBI đặt mục tiêu trở thành công ty bảo hiểm hàng đầu trong lĩnh vực bán lẻ, dựa trên ba trụ cột chiến lược và được củng cố bởi nền tảng vận hành chuyên nghiệp.</p>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold uppercase text-[#013A63]">Công Ty Bảo Hiểm Hàng Đầu Lĩnh Vực Bán Lẻ</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-4">
+                            <div class="bg-[#2A6F97] text-white p-4 rounded-md shadow">
+                                <h4 class="font-bold">Bảo Hiểm Đại Chúng</h4>
+                                <p class="text-xs font-light">KHCN</p>
+                            </div>
+                            <div class="bg-[#468FAF] text-white p-4 rounded-md shadow">
+                                <h4 class="font-bold">Bảo Hiểm Chuyên Nghiệp</h4>
+                                <p class="text-xs font-light">SME & KHDNL</p>
+                            </div>
+                            <div class="bg-accent-gold text-[#012A4A] p-4 rounded-md shadow">
+                                <h4 class="font-bold">Đầu Tư Hiệu Quả</h4>
+                                <p class="text-xs font-light">Tài chính & BĐS</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#013A63] text-white p-4 rounded-md text-center font-semibold mb-2 shadow">Quản Trị Rủi Ro & Giám Định Bồi Thường Chuyên Nghiệp</div>
+                        <div class="bg-[#01497C] text-white p-4 rounded-md text-center font-semibold mb-2 shadow">Tối Ưu Hóa Quy Trình Vận Hành</div>
+                        <div class="bg-[#2A6F97] text-white p-4 rounded-md text-center font-semibold shadow">Nâng Cao Dịch Vụ Trải Nghiệm Khách Hàng</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="engine" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Xây Dựng Cỗ Máy Tăng Trưởng</h2>
+                <p class="section-subtitle">Để hiện thực hóa tầm nhìn, LPBI cần xây dựng "bộ ba" động lực tăng trưởng bán lẻ chuyên trách, vận hành theo mô hình thông minh và khác biệt so với thị trường.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="stat-card p-6 flex flex-col">
+                        <h3 class="font-bold text-xl mb-3 border-b-4 border-accent-gold pb-2">Ban Quản Lý Bán Lẻ</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">"Bộ não" chiến lược cho toàn mảng KHCN, không chỉ quản lý doanh số mà còn chịu trách nhiệm R&D sản phẩm, kiến tạo trải nghiệm khách hàng và điều phối marketing dựa trên dữ liệu.</p>
+                        <div class="text-left text-sm space-y-2 mt-auto">
+                            <p class="font-semibold text-[#01497C]">▶ R&D Sản phẩm "May đo"</p>
+                            <p class="font-semibold text-[#2A6F97]">▶ Kiến tạo Trải nghiệm "Không ma sát"</p>
+                            <p class="font-semibold text-[#468FAF]">▶ Marketing Thông minh & Cá nhân hóa</p>
+                        </div>
+                    </div>
+                     <div class="stat-card p-6 flex flex-col">
+                        <h3 class="font-bold text-xl mb-3 border-b-4 border-accent-gold pb-2">Telesales & CSKH Chủ Động</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">"Cánh tay nối dài" thông minh, chuyển đổi từ mô hình phản ứng sang chủ động. Tư vấn dựa trên dữ liệu từ hệ sinh thái, dự đoán nhu cầu và biến mỗi tương tác thành cơ hội.</p>
+                        <div class="text-left text-sm space-y-2 mt-auto">
+                             <p class="font-semibold text-[#01497C]">▶ Telesales 2.0: Tư vấn viên tài chính từ xa</p>
+                             <p class="font-semibold text-[#2A6F97]">▶ Bán hàng dựa trên sự kiện (Event-Based)</p>
+                             <p class="font-semibold text-[#468FAF]">▶ CSKH Proactive: Người bạn đồng hành</p>
+                        </div>
+                    </div>
+                    <div class="stat-card p-6 flex flex-col">
+                        <h3 class="font-bold text-xl mb-3 border-b-4 border-accent-gold pb-2">Ban Phát Triển Mạng Lưới</h3>
+                        <p class="text-sm text-gray-600 mb-4 flex-grow">"Kiến trúc sư" của hệ sinh thái phân phối, tối ưu hóa mọi điểm chạm, cách mạng hóa Bancassurance bằng công nghệ và xây dựng mạng lưới đối tác số linh hoạt.</p>
+                        <div class="text-left text-sm space-y-2 mt-auto">
+                            <p class="font-semibold text-[#01497C]">▶ Bancassurance 4.0: Tự động & API hóa</p>
+                            <p class="font-semibold text-[#2A6F97]">▶ Công cụ thông minh cho nhân viên Bank</p>
+                            <p class="font-semibold text-[#468FAF]">▶ Mạng lưới Đại lý số & Cộng tác viên</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystem" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                 <h2 class="section-title">Tầm Nhìn Hệ Sinh Thái 2030</h2>
+                 <p class="section-subtitle">LPBI sẽ là một mảnh ghép không thể thiếu trong hệ sinh thái "Một điểm đến cho mọi nhu cầu Tài chính & An toàn" của LPBank Group, cung cấp các giải pháp tích hợp và nền tảng quản lý sức khỏe tài chính toàn diện.</p>
+                 <div class="stat-card p-8">
+                     <div class="flex flex-col md:flex-row items-center">
+                         <div class="md:w-1/3 text-center mb-8 md:mb-0">
+                             <div class="w-48 h-48 bg-accent-gold rounded-full flex items-center justify-center mx-auto shadow-xl">
+                                <div class="text-center">
+                                    <p class="text-white font-bold text-lg">LPBank Group</p>
+                                    <p class="text-white text-xs">Financial Wellness</p>
+                                    <p class="text-white text-xs">& Prosperity Platform</p>
+                                </div>
+                             </div>
+                         </div>
+                         <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                             <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#013A63]">Giải pháp Tích hợp</h4>
+                                <p class="text-sm text-gray-700">Các gói sản phẩm "lai" như "An Cư Lập Nghiệp", "Đầu Tư An Toàn" kết hợp liền mạch dịch vụ ngân hàng và bảo hiểm.</p>
+                             </div>
+                             <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#013A63]">Giải pháp SME Toàn diện</h4>
+                                <p class="text-sm text-gray-700">"Một cửa" cho doanh nghiệp SME từ tín dụng, bảo lãnh đến bảo hiểm gián đoạn kinh doanh, sức khỏe nhân viên.</p>
+                             </div>
+                             <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#013A63]">Nền tảng Quản lý Tài chính</h4>
+                                <p class="text-sm text-gray-700">Công cụ chẩn đoán sức khỏe tài chính, lập kế hoạch và gợi ý giải pháp bảo vệ được cá nhân hóa bằng AI.</p>
+                             </div>
+                             <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-[#013A63]">Dữ liệu là Mạch máu</h4>
+                                <p class="text-sm text-gray-700">Xây dựng "360-Degree Customer View" để hiểu toàn diện khách hàng, thúc đẩy đổi mới sáng tạo và tạo ra trải nghiệm siêu cá nhân hóa.</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#012A4A] mt-16 text-white">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-300 text-sm">
+            <p>&copy; 2024 LPBank Insurance Strategic Analysis. All rights reserved.</p>
+            <p>Xác nhận: Không sử dụng đồ họa SVG hoặc Mermaid JS trong tài liệu này.</p>
+        </div>
+    </footer>
+
+    <script>
+        const FONT_COLOR = '#012A4A';
+        const GRID_COLOR = '#e2e8f0';
+        const PALETTE = {
+            darkBlue: '#012A4A',
+            midBlue1: '#013A63',
+            midBlue2: '#01497C',
+            lightBlue1: '#2A6F97',
+            lightBlue2: '#468FAF',
+            gold: '#D4AF37'
+        };
+
+        const chartTooltipConfig = {
+            enabled: true,
+            backgroundColor: 'rgba(1, 42, 74, 0.9)',
+            titleFont: { family: "'Be Vietnam Pro', sans-serif", size: 14, weight: 'bold' },
+            bodyFont: { family: "'Be Vietnam Pro', sans-serif", size: 12 },
+            padding: 12,
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    if (!item) return '';
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) { return label.join(' '); }
+                    return label;
+                }
+            }
+        };
+
+        const wrapLabel = (label) => {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > 16) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const revenueProfitScatterCtx = document.getElementById('revenueProfitScatter').getContext('2d');
+        new Chart(revenueProfitScatterCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Doanh nghiệp Bảo hiểm',
+                    data: [
+                        { x: -13.76, y: 20.20, label: 'PTI' },
+                        { x: 16.21, y: -32.09, label: 'BIC' },
+                        { x: 7.30, y: -41.99, label: 'MIG' },
+                        { x: 9.48, y: -8.80, label: 'PGI' },
+                        { x: 34.16, y: -46.32, label: 'PVI' },
+                        { x: 11.98, y: -51.91, label: 'BMI' },
+                        { x: 8.05, y: -28.10, label: 'BHI' }
+                    ],
+                    backgroundColor: PALETTE.lightBlue1,
+                    pointRadius: 8,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { ...chartTooltipConfig, callbacks: { ...chartTooltipConfig.callbacks, label: (c) => `${c.raw.label}: DT (${c.raw.x.toFixed(2)}%), LN (${c.raw.y.toFixed(2)}%)` } }
+                },
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: { display: true, text: 'Tăng trưởng Doanh thu (%)', color: FONT_COLOR },
+                        ticks: { color: FONT_COLOR, callback: v => v + '%' },
+                        grid: { color: GRID_COLOR }
+                    },
+                    y: {
+                        title: { display: true, text: 'Tăng trưởng Lợi nhuận (%)', color: FONT_COLOR },
+                        ticks: { color: FONT_COLOR, callback: v => v + '%' },
+                        grid: { color: GRID_COLOR }
+                    }
+                }
+            }
+        });
+
+        const profitSourceChartCtx = document.getElementById('profitSourceChart').getContext('2d');
+        new Chart(profitSourceChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['PVI', 'PTI', 'BMI', 'BIC', 'MIG'],
+                datasets: [
+                    {
+                        label: 'LN gộp từ KDBH',
+                        data: [119.0, 22.6, -19.1, 167.7, 82.3],
+                        backgroundColor: PALETTE.midBlue2,
+                    },
+                    {
+                        label: 'LN gộp từ HĐTC',
+                        data: [234.9, 63.5, 101.9, 80.6, 76.2],
+                        backgroundColor: PALETTE.gold,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'top', labels: { color: FONT_COLOR } }, tooltip: chartTooltipConfig },
+                scales: {
+                    x: { ticks: { color: FONT_COLOR }, grid: { display: false } },
+                    y: { title: { display: true, text: 'Tỷ Đồng', color: FONT_COLOR }, ticks: { color: FONT_COLOR }, grid: { color: GRID_COLOR } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
